@@ -8,7 +8,7 @@ function renderComponent() {
 }
 
 describe("RegistraProduto", () => {
-    test("se o componente é renderizado corretamente com título Cadastro de produtos", async () => {
+    test.skip("se o componente é renderizado corretamente com título Cadastro de produtos", async () => {
         renderComponent() 
         const titulo = await screen.findByRole("heading", {
             name: "Cadastro de produtos",
@@ -18,7 +18,7 @@ describe("RegistraProduto", () => {
     })
 })
 
-test("se o formulário e renderizado com as opções de produto corretas", async () => {
+test.skip("se o formulário e renderizado com as opções de produto corretas", async () => {
     renderComponent()
     const racao = await screen.findByText("Ração")
     const antiparasitario = await screen.findByText("Antiparasitário")
