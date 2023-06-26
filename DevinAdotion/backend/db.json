@@ -1,0 +1,95 @@
+{
+  "usuario": [
+    {
+      "id":"1",
+      "nome": "Otavio",
+      "email":"usuario@example.com",
+      "senha":"senha123"
+    }
+  ],
+  "estoque": [
+    {
+      "id": "1",
+      "armazem": "Estoque 01",
+      "produto": "Antipulgas",
+      "quantidade": "30",
+      "animal": "Cachorro",
+      "categoria": "Adulto"
+    },
+    {
+      "id": "2",
+      "armazem": "Estoque 02",
+      "produto": "Antiparasitário",
+      "quantidade": "10",
+      "animal": "Cachorro",
+      "categoria": "Filhote"
+    },
+    {
+      "armazem": "Estoque 03",
+      "produto": "Antipulgas",
+      "quantidade": "11",
+      "animal": "Cachorro",
+      "categoria": "Filhote",
+      "id": "BXMP5GX"
+    },
+    {
+      "armazem": "Estoque 04",
+      "produto": "Ração",
+      "quantidade": "6",
+      "animal": "Gato",
+      "categoria": "Adulto",
+      "id": "nSHu_u4"
+    }
+  ],
+  "armazem": [
+    {
+      "nome": "Estoque 01",
+      "animal": "Cachorro",
+      "ativo": "true",
+      "id": 1
+    },
+    {
+      "nome": "Estoque 02",
+      "animal": "Gato",
+      "ativo": "true",
+      "id": 2
+    },
+    {
+      "nome": "Estoque 03",
+      "animal": "Cachorro",
+      "ativo": "true",
+      "id": 3
+    },
+    {
+      "nome": "Estoque 04",
+      "animal": "Gato",
+      "ativo": "true",
+      "id": 4
+    },
+    {
+      "nome": "Estoque 05",
+      "tipo_animal": "",
+      "animal": "Cachorro",
+      "ativo": "true",
+      "id": 5
+    },
+    {
+      "nome": "Estoque 06",
+      "animal": "Gato",
+      "ativo": "true",
+      "id": 6
+    },
+    {
+      "nome": "Estoque 07",
+      "animal": "Cachorro",
+      "ativo": "true",
+      "id": 7
+    },
+    {
+      "nome": "Estoque 08",
+      "animal": "Cachorro",
+      "ativo": "true",
+      "id": 8
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+.Menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(202, 222, 216);
+  padding: 20px 46px;
+  gap: 20px;
+  
+}
+
+.Menu img {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.Menu button {
+  padding: 16px 20px;
+  font-size: 23px;
+  margin-bottom: 10px;
+  line-height: 50px;
+  color: #333;
+  background: none;
+  border-radius: 20px;
+  
+
+  min-width: 250px;
+  display: flex;
+  align-items:left;
+  gap: 25px;
+}
+
+.Menu button span {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.Menu button.selected {
+  background: #4cbc9a;
+  color: #ffffff;
+}
+
+.Menu button.selected img {
+  filter: brightness(200%) contrast(500%);
+}
+.navbar-button.dashboard img,
+.navbar-button.estoque img,
+.navbar-button.armazem img {
+width: 5px;
+}
+.navbar .sair-icon {
+margin-top: auto;
+cursor: pointer;
+}
