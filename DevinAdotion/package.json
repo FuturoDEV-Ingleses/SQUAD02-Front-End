@@ -9,7 +9,8 @@
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "server": "json-server --watch  backend/db.json --port 3333 --no-cors",
-    "start": "npm run server & npm run dev"
+    "start": "npm run server & npm run dev",
+    "test": "jest"
   },
   "dependencies": {
     "json-server": "^0.17.3",
