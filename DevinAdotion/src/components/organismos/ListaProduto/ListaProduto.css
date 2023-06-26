@@ -1,0 +1,85 @@
+.lista-produto {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .lista-produto h2 {
+    margin:10px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 42px;
+    color: #374557;
+  }
+  
+  .lista-produto table {
+    margin: 50px auto;
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0px 12px 26px rgba(16, 30, 115, 0.06);
+  }
+  
+  .lista-produto thead {
+    background-color: #fafafa;
+    color: #25282b;
+    height: 55px;
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 24px;
+  }
+  
+  .lista-produto tbody {
+    background-color: #ffffff;
+    color: #25282b;
+    height: 55px;
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #53575d;
+  }
+  
+  .lista-produto th,
+  .lista-produto td {
+    text-align: left;
+    padding: 10px 0;
+    border-bottom: 1px solid #e8e8e8;
+  }
+  
+  
+  .lista-produto th:first-child,
+  .lista-produto td:first-child {
+    padding-left: 18px;
+  }
+  
+  .lista-produto thead th:nth-child(1),
+  .lista-produto tbody td:nth-child(1),
+  .lista-produto thead th:nth-child(4),
+  .lista-produto tbody td:nth-child(4),
+  .lista-produto thead th:nth-child(5),
+  .lista-produto tbody td:nth-child(5),
+  .lista-produto tbody td:nth-child(6),
+  .lista-produto tbody td:nth-child(7) {
+    width: 10%;
+  }
+  
+  
+  .lista-produto thead th:nth-child(2),
+  .lista-produto tbody td:nth-child(2) {
+    width: 15%;
+  }
+  
+  .lista-produto thead th:nth-child(3),
+  .lista-produto tbody td:nth-child(3) {
+    width: 25%;
+  }
+  
+  .lista-produto #new-unit{
+    align-self: flex-end;
+  }

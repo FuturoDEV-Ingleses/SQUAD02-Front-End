@@ -1,0 +1,71 @@
+.registra-produto h2 {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 42px;
+    color: #374557;
+    margin-bottom: 30px;
+    padding: 0px 10vw;
+  }
+  
+  .registra-produto form {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 10vw;
+  }
+  
+  .registra-produto input {
+    height: 20px;
+    width: 280px;
+  }
+  
+  .registra-produto label {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 15px;
+    color: #53575d;
+    display: block;
+    margin-bottom: 5px;
+    
+  }
+  
+  .registra-produto select {
+    box-sizing: border-box;
+  
+    width: 280px;
+    height: 60px;
+  
+    background: #fafafa;
+    border: 1px solid #000000;
+    border-radius: 10px;
+  
+    font-family: "Roboto Slab";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+  
+    color:#000000
+    padding: 28px;
+    margin-bottom: 20px;
+  }
+  
+  
+  .registra-produto div.checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .registra-produto div.checkbox label {
+    margin-bottom: 10px;
+  }
+  
+  .registra-produto button {
+    margin-bottom: 50px;
+  }

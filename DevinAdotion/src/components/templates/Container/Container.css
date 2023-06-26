@@ -1,0 +1,73 @@
+.Container {
+    display: grid;
+    grid-template-columns: 445px 1fr;
+    grid-template-rows: 120px 1fr;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .Container .Menu {
+    /* position: fixed;
+    width: 23%; */
+    grid-column: 1;
+    grid-row: 1 / 5;
+  }
+  
+  .Container header {
+    grid-column: 2;
+    grid-row: 1;
+    background-color:rgb(245, 255, 252);
+  
+    display: flex;
+    align-items: center;
+    padding-left: 90px;
+  }
+  
+  .Container header h1 {
+    font-family: Poppins;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 54px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #374557;
+  }
+  
+  .Container main {
+    grid-column: 2;
+    grid-row: 2;
+      padding: 0px 8vw;
+    background-color:rgb(245, 255, 252)
+  }
+
+  .Container main img {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px; /* Espaçamento entre os cards */
+  }
+
+  .card-container {
+    width: 300px;
+    margin-right: 0px;
+    padding: 8px;
+  }
+  
+  .img-section {
+    grid-column: 2;
+  }
+  
+  .img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card {
+    grid-column: 3;
+  }
+  
+  .clickable {
+    cursor: pointer;
+  }
+  
