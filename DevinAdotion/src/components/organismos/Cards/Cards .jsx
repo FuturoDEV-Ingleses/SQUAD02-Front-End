@@ -6,7 +6,7 @@ const [estoques, setEstoques] = useState([]);
 const [armazens, setArmazens] = useState([]);
 
 const getData = (path, setData) => {
-    fetch(`http://localhost:3333/${path}`)
+    fetch(`http://localhost:8080/dashboard`)
       .then((res) => res.json())
       .then((dados) => setData(dados));
   };
@@ -20,27 +20,27 @@ const getData = (path, setData) => {
     return estoques
       .filter(
         (estoque) =>
-          estoque.animal === animal &&
-          estoque.categoria === categoria &&
-          estoque.produto === produto
+          estoque.animal.toUpperCase() === animal.toUpperCase() &&
+          estoque.categoria.toUpperCase() === categoria.toUpperCase() &&
+          estoque.produto.toUpperCase() === produto.toUpperCase()
       )
       .reduce((acc, estoque) => acc + parseInt(estoque.quantidade), 0);
   };
 
-  const racaoFilhote = getQuantidade("Cachorro", "Filhote", "Ração");
-  const antiparasitarioFilhote = getQuantidade("Cachorro", "Filhote", "Antiparasitário");
+  const racaoFilhote = getQuantidade("Cachorro", "Filhote", "Racao");
+  const antiparasitarioFilhote = getQuantidade("Cachorro", "Filhote", "Antiparasitario");
   const antipulgasFilhote = getQuantidade("Cachorro", "Filhote", "Antipulgas");
   
-  const racao = getQuantidade("Cachorro", "Adulto", "Ração" );
-  const antiparasitario = getQuantidade("Cachorro", "Adulto", "Antiparasitário");
+  const racao = getQuantidade("Cachorro", "Adulto", "Racao" );
+  const antiparasitario = getQuantidade("Cachorro", "Adulto", "Antiparasitario");
   const antipulgas = getQuantidade("Cachorro", "Adulto", "Antipulgas");
   
-  const racaoGatoFilhote = getQuantidade("Gato", "Filhote", "Ração");
-  const antiparasitarioGatoFilhote = getQuantidade("Gato", "Filhote", "Antiparasitário");
+  const racaoGatoFilhote = getQuantidade("Gato", "Filhote", "Racao");
+  const antiparasitarioGatoFilhote = getQuantidade("Gato", "Filhote", "Antiparasitario");
   const antipulgasGatoFilhote = getQuantidade("Gato", "Filhote", "Antipulgas");
 
-  const racaoGato = getQuantidade("Gato", "Adulto", "Ração");
-  const antiparasitarioGato = getQuantidade("Gato", "Adulto", "Antiparasitário");
+  const racaoGato = getQuantidade("Gato", "Adulto", "Racao");
+  const antiparasitarioGato = getQuantidade("Gato", "Adulto", "Antiparasitario");
   const antipulgasGato = getQuantidade("Gato", "Adulto", "Antipulgas");
 
     const cards = [
