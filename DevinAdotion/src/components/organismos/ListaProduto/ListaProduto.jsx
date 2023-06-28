@@ -7,7 +7,7 @@ export default function ListaProduto({setOpenForm, setProdutoSelecionado}){
     
 
     const getData = () => {
-        fetch("http://localhost:3333/estoque")
+      fetch("http://localhost:8080/estoque/listar")
         .then((response) => response.json())
         .then((data) => setProdutos(data));
     }
@@ -18,7 +18,7 @@ export default function ListaProduto({setOpenForm, setProdutoSelecionado}){
 
       const handleDelete = (id) =>{
         // console.log(id);
-        fetch(`http://localhost:3333/estoque/${id}`, {
+        fetch(`http://localhost:8080/estoque/remover/${id}`, {
             method: "DELETE",
       }).then(() => {
         getData("produtos", setProdutos);
@@ -51,7 +51,7 @@ export default function ListaProduto({setOpenForm, setProdutoSelecionado}){
                     {produtos.map((produto) => (
                     <tr key={produto.id}>
                         <td>{produto.id}</td>
-                        <td>{produto.armazem}</td>
+                        <td>{produto.armazenado}</td>
                         <td>{produto.produto}</td>
                         <td>{produto.produto === "Ração" ? produto.quantidade +" "+"Kg": produto.quantidade}</td>
                         <td>{produto.categoria}</td>

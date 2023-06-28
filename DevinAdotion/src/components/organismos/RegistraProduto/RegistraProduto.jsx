@@ -57,13 +57,17 @@ export default function RegistraProduto({
   };
 
   const editaProduto = () => {
-    fetch(`http://localhost:3333/estoque/${produtoSelecionado.id}`, {
+    fetch(`http://localhost:8080/estoque/editar/${produtoSelecionado.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(form),
-    });
+    })
+    .then(() => {
+      setProdutoSelecionado(undefined);
+      getData();
+    })
   };
 
   const handleSave = (event) => {
