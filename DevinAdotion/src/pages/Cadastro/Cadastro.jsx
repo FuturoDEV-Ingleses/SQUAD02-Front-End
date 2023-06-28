@@ -31,12 +31,12 @@ const Cadastro = () => {
       .then(response => response.json())
       .then(result => {
         console.log('Cadastro realizado com sucesso, faça o seu login!', result);
-
+        // Você pode redirecionar para uma página de sucesso aqui, por exemplo:
         navigate('/login');
       })
       .catch(error => {
         console.error('Erro no cadastro:', error);
-
+        // Você pode exibir uma mensagem de erro ao usuário aqui, por exemplo:
         alert('Erro ao cadastrar. Por favor, tente novamente.');
       });
   };
@@ -79,3 +79,4 @@ const Cadastro = () => {
 };
 
 export default Cadastro;
+
