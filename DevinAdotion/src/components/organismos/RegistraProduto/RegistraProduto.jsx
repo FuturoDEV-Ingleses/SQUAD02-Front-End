@@ -3,51 +3,39 @@ import { useEffect, useState } from "react";
 import { Button, Input } from "../../index";
 
 export default function RegistraProduto({
+  getData,
   setOpenForm,
   produtoSelecionado,
   setProdutoSelecionado,
   armazens,
 }) {
   const emptyState = {
-    armazem: "",
+
+    armazemId:"",
+    armazenado: "",
     produto: "",
     quantidade: "",
     animal: "",
     categoria: "",
   };
 
-  // const [form, setForm] = useState(produtoSelecionado ? produtoSelecionado : emptyState);
-
   const [form, setForm] = useState(produtoSelecionado || emptyState);
-  // const [dadosEmEstoque, setDadosEmEstoque] = useState({})
 
-  // useEffect(() => {
-  //   const carregar = async() => {
-  //     fetch(`http://localhost:3333/armazem`, {
-  //       method: "GET"
-  //     }).then((response) => response.json())
-  //     .then((data) => setDadosEmEstoque(data));
-  //   }
-  //   carregar()
-  // },[])
+console.log(produtoSelecionado);
+  const alterarFormAnimal = (campo, evento) => { 
 
-  // const handleChange = (campo, valor) => {
-  //   setForm({
-  //     ...form,
-  //     [campo]: valor
-  //   });
-  // };
-
-  const alterarFormAnimal = (campo, evento) => {
-    setForm({
+   const armazemEncontrado = armazens.find((dados) => dados.id == evento.target.value)
+    
+   setForm({
       ...form,
       [campo]: evento.target.value,
-      animal: armazens.find((dados) => dados.nome === evento.target.value).animal
+      animal: armazemEncontrado.animal,
+      armazenado: armazemEncontrado.armazenado
     })
   }
 
   const criaProduto = () => {
-    fetch("http://localhost:3333/estoque", {
+    fetch("http://localhost:8080/estoque/cadastrar", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -72,14 +60,11 @@ export default function RegistraProduto({
 
   const handleSave = (event) => {
     event.preventDefault();
-    // criaProduto();
-
     produtoSelecionado ? editaProduto() : criaProduto();
-
-    setProdutoSelecionado(emptyState);
     setOpenForm(false);
+    window.location.reload();
   };
-
+console.log(form);
   return (
     <section className="registra-produto">
       <h2>Cadastro de produtos</h2>
@@ -94,16 +79,16 @@ export default function RegistraProduto({
                 <select
                   name={campo}
                   id={campo}
-                  value={form.armazem}
+                  value={+form.armazemId}
                   onChange={(e) => {
-                    alterarFormAnimal(campo, e)
+                    alterarFormAnimal("armazemId", e)
                   }}
                 >
-                  <option value="Selecione uma opção" disabled={form.armazem}> 
+                  <option value="Selecione uma opção" disabled={form.armazemId}> 
                     Selecione uma opção
                   </option>
                   {armazens.map((armazem) => (
-                    <option key={armazem.id} value={armazem.nome}>
+                    <option key={armazem.id} value={armazem.id}>
                       {armazem.nome}
                     </option>
                   ))}
@@ -123,9 +108,9 @@ export default function RegistraProduto({
                   <option value="Selecione uma opção" disabled={form.produto}> 
                     Selecione uma opção
                   </option>
-                  <option value="Ração">Ração</option>
-                  <option value="Antiparasitário">Antiparasitário</option>
-                  <option value="Antipulgas">Antipulgas</option>
+                  <option value="RACAO">Ração</option>
+                  <option value="ANTIPARASITARIO">Antiparasitário</option>
+                  <option value="ANTIPULGAS">Antipulgas</option>
                 </select>
               ) : campo === "animal" ? (
                 <select
@@ -143,8 +128,8 @@ export default function RegistraProduto({
                   <option value="Selecione uma opção" disabled={form.animal}> 
                     Selecione uma opção
                   </option>
-                  <option value="Cachorro">Cachorro</option>
-                  <option value="Gato">Gato</option>
+                  <option value="CACHORRO">Cachorro</option>
+                  <option value="GATO">Gato</option>
                 </select>
               ) : campo === "categoria" ? (
                 <select
@@ -161,8 +146,8 @@ export default function RegistraProduto({
                   <option value="Selecione uma opção" disabled={form.categoria}> 
                     Selecione uma opção
                   </option>
-                  <option value="Adulto">Adulto</option>
-                  <option value="Filhote">Filhote</option>
+                  <option value="ADULTO">Adulto</option>
+                  <option value="FILHOTE">Filhote</option>
                 </select>
               ) : (
                 <Input

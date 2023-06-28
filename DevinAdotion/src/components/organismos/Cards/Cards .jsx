@@ -49,143 +49,152 @@ const getData = (path, setData) => {
   const antipulgasGato = getQuantidade("Gato", "Adulto", "Antipulgas");
   const gatoAdulto = estoques.filter((estoque) => estoque.animal === "Gato", "Adulto").length;
 
-    const cards = [
-      {
-        id: "estoque",
-        title: " Cachorro Filhote",
-        subtitle: "Kg de Ração",
-        value: racaoFilhote,
-        clickable: true,
-        isFirstCard: false,
-        hasImg: true
-      },
-      {
-        id: "estoque",
-        title: " Cachorro Filhote",
-        subtitle: "Antiparasitário",
-        value: antiparasitarioFilhote,
-        clickable: true,
-        isFirstCard: false,
-        hasImg: false
-      },
-      {
-        id: "estoque",
-        title: " Cachorro Filhote",
-        subtitle: "Antipulgas",
-        value: antipulgasFilhote,
-        clickable: true,
-        isFirstCard: false,
-        hasImg: false
-      },
-      {
-        id: "estoque",
-        title: "Cachorro",
-        subtitle: "Filhote",
-        value: cachorroFilhote,
-        clickable: true,
-        isFirstCard: false,
-        hasImg: false
-      },
-      {
-        id: "estoque",
-        title: "Kg de Ração Adulto",
-        value: racao,
-        clickable: true,
-        isFirstCard: false,
-        hasImg: true
-      },
-      {
-        id: "estoque",
-        title: "Antiparasitário Adulto",
-        value: antiparasitario,
-        clickable: true,
-        isFirstCard: false,
-        hasImg: false
-      },
-      {
-        id: "estoque",
-        title: "Antipulgas Adulto",
-        value: antipulgas,
-        clickable: true,
-        isFirstCard: false,
-        hasImg: false
-      },
-      {
-        id: "estoque",
-        title: "Cachorro",
-        subtitle: "Adulto",
-        value: cachorroAdulto,
-        clickable: true,
-        isFirstCard: false,
-        hasImg: false
-      },
-      {
-        id: "estoque",
-        title: "Kg de Ração Filhote",
-        value: racaoGatoFilhote,
-        clickable: true,
-        isFirstCard: false,
-        hasImg: true
-      },
-      {
-        id: "estoque",
-        title: "Antiparasitário Filhote",
-        value: antiparasitarioGatoFilhote,
-        clickable: true,
-        isFirstCard: false,
-        hasImg: false
-      },
-      {
-        id: "estoque",
-        title: "Antipulgas Filho",
-        value: antipulgasGatoFilhote,
-        clickable: true,
-        isFirstCard: false,
-        hasImg: false
-      },
-      {
-        id: "estoque",
-        title: "Gato",
-        subtitle: "Filhote",
-        value: gatoFilhote,
-        clickable: true,
-        isFirstCard: false,
-        hasImg: false
-      },
-      {
-        id: "estoque",
-        title: "Kg de Ração Adulto",
-        value: racaoGato,
-        clickable: true,
-        isFirstCard: false,
-        hasImg: true
-      },
-      {
-        id: "estoque",
-        title: "Antiparasitário Adulto",
-        value: antiparasitarioGato,
-        clickable: true,
-        isFirstCard: false,
-        hasImg: false
-      },
-      {
-        id: "estoque",
-        title: "Antipulgas Adulto",
-        value: antipulgasGato,
-        clickable: true,
-        isFirstCard: false,
-        hasImg: false
-      },
-      {
-        id: "estoque",
-        title: "Gato",
-        subtitle: "Adulto",
-        value: gatoAdulto,
-        clickable: true,
-        isFirstCard: false,
-        hasImg: false
-      }
-    ];
+  const cards = [
+    {
+      id: "estoque",
+      title: " Cachorro Filhote",
+      subtitle: "Kg de Ração",
+      value: racaoFilhote,
+      clickable: true,
+      isFirstCard: false,
+      hasImg: true
+    },
+    {
+      id: "estoque",
+      title: " Cachorro Filhote",
+      subtitle: "Antiparasitário",
+      value: antiparasitarioFilhote,
+      clickable: true,
+      isFirstCard: false,
+      hasImg: false
+    },
+    {
+      id: "estoque",
+      title: " Cachorro Filhote",
+      subtitle: "Antipulgas",
+      value: antipulgasFilhote,
+      clickable: true,
+      isFirstCard: false,
+      hasImg: false
+    },
+    {
+      id: "estoque",
+      title: "Cachorro",
+      subtitle: "Filhote",
+      value: cachorroFilhote,
+      clickable: true,
+      isFirstCard: false,
+      hasImg: false
+    },
+    {
+      id: "estoque",
+      title: "Cachorro Adulto",
+      subtitle: "Kg Ração",
+      value: racao,
+      clickable: true,
+      isFirstCard: false,
+      hasImg: true
+    },
+    {
+      id: "estoque",
+      title: "Cachorro Adulto",
+      subtitle: "Antiparasitário",
+      value: antiparasitario,
+      clickable: true,
+      isFirstCard: false,
+      hasImg: false
+    },
+    {
+      id: "estoque",
+      title: "Cachorro Adulto",
+      subtitle: "Antipulgas",
+      value: antipulgas,
+      clickable: true,
+      isFirstCard: false,
+      hasImg: false
+    },
+    {
+      id: "estoque",
+      title: "Cachorro",
+      subtitle: "Adulto",
+      value: cachorroAdulto,
+      clickable: true,
+      isFirstCard: false,
+      hasImg: false
+    },
+    {
+      id: "estoque",
+      title: "Gato Filhote",
+      subtitle: "Kg de Ração",
+      value: racaoGatoFilhote,
+      clickable: true,
+      isFirstCard: false,
+      hasImg: true
+    },
+    {
+      id: "estoque",
+      title: "Gato Filhote",
+      subtitle: "Antiparasitário",
+      value: antiparasitarioGatoFilhote,
+      clickable: true,
+      isFirstCard: false,
+      hasImg: false
+    },
+    {
+      id: "estoque",
+      title: "Gato Filhote",
+      subtitle: "Antipulgas",
+      value: antipulgasGatoFilhote,
+      clickable: true,
+      isFirstCard: false,
+      hasImg: false
+    },
+    {
+      id: "estoque",
+      title: "Gato",
+      subtitle: "Filhote",
+      value: gatoFilhote,
+      clickable: true,
+      isFirstCard: false,
+      hasImg: false
+    },
+    {
+      id: "estoque",
+      title: "Gato Adulto",
+      subtitle: "Kg de Ração",
+      value: racaoGato,
+      clickable: true,
+      isFirstCard: false,
+      hasImg: true
+    },
+    {
+      id: "estoque",
+      title: "Gato Adulto",
+      subtitle: "Antiparasitário",
+      value: antiparasitarioGato,
+      clickable: true,
+      isFirstCard: false,
+      hasImg: false
+    },
+    {
+      id: "estoque",
+      title: "Gato Adulto",
+      subtitle: "Antipulgas",
+      value: antipulgasGato,
+      clickable: true,
+      isFirstCard: false,
+      hasImg: false
+    },
+    {
+      id: "estoque",
+      title: "Gato",
+      subtitle: "Adulto",
+      value: gatoAdulto,
+      clickable: true,
+      isFirstCard: false,
+      hasImg: false
+    }
+  ];
       
   return (
     <section style={{ display: "flex", flexDirection:"row", flexWrap: "wrap" }}>
