@@ -1,0 +1,24 @@
+# Logs
+DevinAdotion/logs
+DevinAdotion/*.log
+DevinAdotion/npm-debug.log*
+DevinAdotion/yarn-debug.log*
+DevinAdotion/yarn-error.log*
+DevinAdotion/pnpm-debug.log*
+DevinAdotion/lerna-debug.log*
+
+DevinAdotion/node_modules
+DevinAdotion/dist
+DevinAdotion/dist-ssr
+DevinAdotion/*.local
+
+# Editor directories and files
+DevinAdotion/.vscode/*
+DevinAdotion/!.vscode/extensions.json
+DevinAdotion/.idea
+DevinAdotion/.DS_Store
+DevinAdotion/*.suo
+DevinAdotion/*.ntvs*
+DevinAdotion/*.njsproj
+DevinAdotion/*.sln
+DevinAdotion/*.sw?

@@ -1,5 +1,5 @@
 import "./CadastraArmazem.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Input } from "../../index";
 
 export default function CadastraArmazem({
@@ -14,10 +14,24 @@ export default function CadastraArmazem({
         animal:""
     };
     
-    const [form, setForm] = useState(armazemSelecionado || emptyState);
-
+    const [form, setForm] = useState(emptyState);
+    
+    useEffect(() => {
+      const carregar = () => {
+        setForm( {
+          ...form,
+          nome,
+          animal,
+          ativo
+      })
+      }
+      carregar();
+    },[nome, animal, ativo])
+    
     const criaArmazem = () => {
-        fetch("http://localhost:3333/armazem", {
+      console.log(JSON.stringify);
+
+        fetch("http://localhost:8080/armazem/cadastrar", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -29,19 +43,20 @@ export default function CadastraArmazem({
     const editaArmazem = () => {
       console.log(form)
 
-        fetch(`http://localhost:3333/armazem/${armazemSelecionado.id}`, {
+        fetch(`http://localhost:8080/armazem/editar/${id}`, {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",
             },
             body: JSON.stringify(form),
           });
+          setArmazemSelecionado(false)
     };
 
     const handleSaveArmazem = (event) => {
       event.preventDefault();
       armazemSelecionado ? editaArmazem() : criaArmazem();
-      setArmazemSelecionado(emptyState);
+      // setArmazemSelecionado(emptyState);
       window.location.reload(); // Recarrega a página
     };
 
@@ -60,7 +75,7 @@ export default function CadastraArmazem({
                   type="text"
                   name={campo}
                   id={campo}
-                  value={ nome || form[campo]}
+                  value={form[campo]}
                   onChange={(e) => {
                     setForm({
                       ...form,
@@ -73,7 +88,7 @@ export default function CadastraArmazem({
                 <select
                   name={campo}
                   id={campo}
-                  value={ animal || form[campo]}
+                  value={form[campo]}
                   onChange={(e) => {
                     setForm({
                       ...form,
@@ -82,14 +97,14 @@ export default function CadastraArmazem({
                   }}
                 >
                   <option value=""></option>
-                  <option value="Cachorro">Cachorro</option>
-                  <option value="Gato">Gato</option>
+                  <option value="CACHORRO">Cachorro</option>
+                  <option value="GATO">Gato</option>
                 </select>
               ) : campo === "ativo" ? (
                 <select
                   name={campo}
                   id={campo}
-                  value={ativo || form[campo]}
+                  value={form[campo]}
                   onChange={(e) => {
                     setForm({
                       ...form,

@@ -1,32 +1,22 @@
 import "./Card.css";
 import cachorro from "../../../assets/cachorro.png";
 import gato from "../../../assets/gato.png";
-export default function Card({ title, value, clickable, isFirstCard,hasImg, ...props }) {
+
+export default function Card({ title,subtitle, value, clickable, isFirstCard,hasImg, ...props }) {
 
   return (
-    <div className="card-container" >
-      {hasImg && (
-        <div style={{
-          position: 'absolute',
-          marginLeft: -'90'
-        }}>
-        <section className="img-section">
-          {/* <div className="img">
-            <img
-              src={cachorro}
-              alt="Cachorro"
-              width="100"
-              height="100"
-            />
-          </div> */}
-        </section>
-        
-        </div>
-      )}
-      
+ 
+      <div className="card-container">
+             <div className="card-title">
+      </div>
+
+
       <div className={`card ${clickable && 'clickable'}`} {...props}>
         <h3>{title}</h3>
+        <h4>{subtitle}</h4>
         {value && <p>{value}</p>}
+        
+        
       </div>
       <div className={`card-container ${isFirstCard ? 'first-card' : ''}`} >
       {isFirstCard && (

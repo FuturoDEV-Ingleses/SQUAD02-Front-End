@@ -4,6 +4,7 @@ import "./ListaArmazem.css";
 
 export default function ListaArmazem() {
   const [armazem, setArmazem] = useState([]);
+  const [verificarSelecionado, setVerificarSelecionado] = useState(false);
   const [armazemSelecionado, setArmazemSelecionado] = useState({
     armazemId: "", 
     armazemNome: "",  
@@ -12,7 +13,7 @@ export default function ListaArmazem() {
   });
 
   const getData = () => {
-    fetch("http://localhost:3333/armazem")
+    fetch("http://localhost:8080/armazem/ar")
       .then((response) => response.json())
       .then((data) => setArmazem(data));
   };
@@ -23,8 +24,8 @@ export default function ListaArmazem() {
 
   const handleDelete = (id) => {
     // console.log(id);
-    fetch(`http://localhost:3333/armazem/${id}`, {
-      method: "DELETE",
+    fetch(`http://localhost:8080/armazem/desativar/${id}`, {
+      method: "PUT",
     }).then(() => {
       getData();
     });
@@ -36,7 +37,7 @@ export default function ListaArmazem() {
     armazemAnimal,
     armazemAtivo
     ) => {
-    console.log(armazem)
+    setVerificarSelecionado(true)
     setArmazemSelecionado({
       armazemId, 
       armazemNome,  
@@ -44,22 +45,6 @@ export default function ListaArmazem() {
       armazemAtivo
     });
   };
-  // const handleEdit = (armazem) => {
-  //   setArmazemSelecionado((armazem));
-  //   fetch(`http://localhost:3333/armazem/${armazem.id}`, {
-  //     method: "PUT",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(form),
-  //   })
-  //     .then(() => {
-  //       getData();
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // };
 
   const renderizarStatus = (status) => {
     return status ? "Ativo" : "Inativo";
@@ -72,7 +57,8 @@ export default function ListaArmazem() {
         animal={armazemSelecionado.armazemAnimal}
         ativo={armazemSelecionado.armazemAtivo}
         id={armazemSelecionado.armazemId}
-        setArmazemSelecionado={setArmazemSelecionado} 
+        setArmazemSelecionado={setVerificarSelecionado}
+        armazemSelecionado={verificarSelecionado} 
       />
 
       <section className="lista-armazem">

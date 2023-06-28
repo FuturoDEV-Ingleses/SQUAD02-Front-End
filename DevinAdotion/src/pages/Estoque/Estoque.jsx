@@ -8,7 +8,7 @@ export default function Estoque(){
   const [armazens, setArmazens] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3333/armazem")
+    fetch("http://localhost:8080/armazem/ar")
       .then((response) => response.json())
       .then((data) => setArmazens(data))
       .catch((error) => console.log(error));
