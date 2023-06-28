@@ -21,7 +21,7 @@ const Cadastro = () => {
       senha: senha
     };
 
-    fetch('https://seu-servidor.com/api/cadastro', {
+      fetch('http://localhost:3333/cadastro', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

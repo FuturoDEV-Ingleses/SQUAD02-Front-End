@@ -11,12 +11,36 @@ const Login = () => {
   const [erro, setErro] = useState('');
 
   const handleLogin = () => {
-    // Validar o e-mail e a senha aqui, por exemplo:
-    if (email === 'usuario@example.com' && senha === 'senha123') {
-      navigate('/dashboard');
-    } else {
-      setErro('E-mail e/ou Senha inválidos!');
-    }
+    const data = {
+      email: email,
+      senha: senha
+    };
+
+    fetch('http://localhost:3333/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Erro ao fazer login. Por favor, tente novamente.');
+        }
+        return response.json();
+      })
+      .then(result => {
+        if (result.message === 'Login realizado com sucesso!') {
+          navigate('/dashboard');
+        } else {
+          setErro(result.message);
+        }
+      })
+      .catch(error => {
+        console.error('Erro no login:', error);
+
+        setErro(error.message);
+      });
   };
 
   const handleFecharPopUp = () => {
