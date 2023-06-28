@@ -1,6 +1,9 @@
 # Squad02-FrontEnd
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/FuturoDEV-Ingleses/SQUAD02-Front-End/blob/main/LICENSE) 
-Projeto Avaliativo Senai-Lab365.
+## Projeto Avaliativo Módulo 3 Senai-Lab365.
+### Para acessar o projeto é necessário digitar:
+#### Email: usuario@example.com
+#### Senha: senha123
 ## Sobre o projeto
 Aplicação para controle de estoque de materiais para ongs, desenvolvido em grupo.
 
@@ -41,10 +44,15 @@ A aplicação tem as seguintes rotas:
 ## Integrantes da Squad02
 O projeto é dividido em front-end e back-end:
 #### Time front-end:
-    Otávio e Rosa
+   #### `Rosa Cristina Freitas`
+   #### `Otavio Nascimento`
 #### Time Back-end: 
-    Neli e Victor
+   #### `Neli Hristova` 
+   #### `Victor Santos da Luz`
 #### Testes: 
-    Yoslandy
+   #### `Yoslandy Rodrígues Lópes`
 
-## Licença
+## Acesse o back-end no seguinte repositório:
+https://github.com/FuturoDEV-Ingleses/SQUAD02-Back-End-
+
+
