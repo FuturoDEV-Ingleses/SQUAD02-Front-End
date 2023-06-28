@@ -1,5 +1,5 @@
 # Squad02-FrontEnd
-[![NPM](https://img.shields.io/npm/l/react)(https://github.com/FuturoDEV-Ingleses/SQUAD02-Front-End/blob/main/LICENSE)) ]
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/FuturoDEV-Ingleses/SQUAD02-Front-End/blob/main/LICENSE) 
 Projeto Avaliativo Senai-Lab365.
 ## Sobre o projeto
 Aplicação para controle de estoque de materiais para ongs, desenvolvido em grupo.
